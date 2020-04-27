@@ -1,11 +1,18 @@
+
 from .models import Sources,Articles
-# Getting the api key
+from datetime import datetime
+import os
+import json,urllib.request
+# from . import app
+
+#getting the api key
+
 api_key = None
-
 #getting the news base url
-base_url = None
 
+base_url = None
 #getting the articlces url
+
 articles_url = None
 
 def configure_request(app):
@@ -13,6 +20,7 @@ def configure_request(app):
 	api_key = app.config['NEWS_API_KEY']
 	base_url = app.config['NEWS_SOURCES_BASE_URL']
 	articles_url = app.config['ARTICLES_BASE_URL']
+
 
 def get_sources(category):
 	'''
@@ -64,7 +72,6 @@ def get_articles(id):
 		if articles_results['articles']:
 			articles_object = process_articles(articles_results['articles'])
 	return articles_object
-
 
 def process_articles(articles_list):
 	'''
