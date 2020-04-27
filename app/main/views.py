@@ -24,4 +24,7 @@ def articles(id):
     '''
     View source page function that returns the source details page and its data
     '''
+    articles = get_articles(id)
+    title = f'NH{id}'
+    
     return render_template('articles.html')
