@@ -8,7 +8,7 @@ Biron Otieno Odhiambo
 
 ## Behaviour Driven Development(BDD)
 
-#### Input
+### Input
 
 click on news title
 
